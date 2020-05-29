@@ -51,7 +51,7 @@ The `redirectURI` does not have to be provided, garden-setup will automatically 
 
 Apart from `users` and `connectors`, some other values can be configured in `landscape.identity`:
 
-The issuer URL can be set via `landscape.identity.issuerUrl`. The default is `https://gardener.ing.<landscape.domain>/oidc`.
+The issuer URL can be set via `landscape.identity.issuerUrl`. The default is `https://gardener.ing.<landscape.domain>/oidc`. Instead of specifying this value, it is also possible to set `landscape.identity.useIdentityDomain` to `true`, then `https://identity.ing.<landscape.domain>/oidc` will be used. If both are specified, `issuerUrl` takes precedence over `useIdentityDomain`.
 
 By setting `landscape.identity.dashboardClientSecret` or `landscape.identity.kubectlClientSecret`, the corresponding client secret(s) can be defined. By default, a random value is generated for the first deployment, which is then stored in the state so it doesn't change on redeployments.
 

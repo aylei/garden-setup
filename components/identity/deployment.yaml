@@ -43,7 +43,7 @@ spec:
       state: (( map[input|v|->{ "email"=v.email, "username"=v.username, "hash"=( v.hash || bcrypt(v.password) ) }] ))
 
 settings:
-  issuerUrl: (( .landscape.identity.issuerUrl || "https://" dashboard_dns "/oidc" ))
+  issuerUrl: (( .landscape.identity.issuerUrl || "https://" ( .landscape.identity.useIdentityDomain ? identity_dns :dashboard_dns ) "/oidc" ))
   callbackUrl: (( issuerUrl "/callback" ))
   dashboardUrl: (( "https://" dashboard_dns ))
   identity_dns: (( "identity." .imports.ingress-controller.export.ingress_domain ))
