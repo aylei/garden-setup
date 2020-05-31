@@ -43,7 +43,7 @@
           "version": "v1.7.1"
         },
         "provider-gcp": {
-          "repo": "https://github.com/qiffang/gardener-extension-provider-gcp.git",
+          "repo": "https://github.com/aylei/gardener-extension-provider-gcp.git",
           "version": "v1.7.1-dev"
         },
         "provider-openstack": {
