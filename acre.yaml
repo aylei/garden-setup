@@ -82,7 +82,7 @@ landscape:
           repo: (( .dependency_versions.versions.gardener.extensions.os-ubuntu-tikv.repo ))
           chart_path: charts/gardener-extension-os-ubuntu-tikv
           # TODO: fork repo under pingcap org add tag and default image in our forked repo instead
-          image_tag: v1.5.0-dev
+          image_tag: (( valid( os-ubuntu-tikv.tag ) ? os-ubuntu-tikv.tag :~~ ))
           image_repo: jlerche/os-ubuntu-tikv
         os-gardenlinux:
           <<: (( merge ))
@@ -111,7 +111,7 @@ landscape:
           repo: (( .dependency_versions.versions.gardener.extensions.provider-gcp.repo ))
           chart_path: charts/gardener-extension-provider-gcp
           # TODO: fork repo under pingcap org add tag and default image in our forked repo instead
-          image_tag: v1.7.1-dev
+          image_tag: (( valid( provider-gcp.tag ) ? provider-gcp.tag :~~ ))
           image_repo: qiffang199133/provider-gcp
         provider-azure:
           <<: (( merge ))

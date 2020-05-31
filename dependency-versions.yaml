@@ -27,8 +27,8 @@
           "version": "v1.5.0"
         },
         "os-ubuntu-tikv": {
-          "repo": "https://github.com/jlerche/gardener-extension-os-ubuntu-tikv.git",
-          "version": "master"
+          "repo": "https://github.com/aylei/gardener-extension-os-ubuntu-tikv.git",
+          "version": "v1.5.0-dev"
         },
         "os-gardenlinux": {
           "repo": "https://github.com/gardener/gardener-extension-os-gardenlinux.git",
@@ -44,7 +44,7 @@
         },
         "provider-gcp": {
           "repo": "https://github.com/qiffang/gardener-extension-provider-gcp.git",
-          "version": "qiffang-1.7.0"
+          "version": "v1.7.1-dev"
         },
         "provider-openstack": {
           "repo": "https://github.com/gardener/gardener-extension-provider-openstack.git",
