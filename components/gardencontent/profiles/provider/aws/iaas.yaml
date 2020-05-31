@@ -15,174 +15,89 @@
 <<: (( &template ))
 
 machineImages:
-  - name: gardenlinux
+  - name: ubuntu
     versions:
-    - version: 11.29.2
+      - version: 18.4.20190617
+  - name: ubuntu-tikv
+    versions:
+      - version: 18.4.20190617
 
 providerConfig:
   apiVersion: aws.provider.extensions.gardener.cloud/v1alpha1
   kind: CloudProfileConfig
   machineImages:
-  - name: gardenlinux
-    versions:
-    - regions:
-      - ami: ami-000d2086310590420
-        name: ap-northeast-1
-      - ami: ami-09fc319647fed587d
-        name: ap-northeast-2
-      - ami: ami-06b2b34c865a727dd
-        name: ap-south-1
-      - ami: ami-07a41ec3e2a35e173
-        name: ap-southeast-1
-      - ami: ami-0bd57bff5b781998a
-        name: ap-southeast-2
-      - ami: ami-00b3fc33d5454c4b0
-        name: ca-central-1
-      - ami: ami-0bdeaa78ccefae729
-        name: eu-central-1
-      - ami: ami-036e62d2d876b5a96
-        name: eu-north-1
-      - ami: ami-06458801dbaec803b
-        name: eu-west-1
-      - ami: ami-01c9ef2569df6ed09
-        name: eu-west-2
-      - ami: ami-0fcb07bf03161dadb
-        name: eu-west-3
-      - ami: ami-04843d98ee8f8b53a
-        name: sa-east-1
-      - ami: ami-0f07b6a0455e0446d
-        name: us-east-1
-      - ami: ami-01caede62e2f0e624
-        name: us-east-2
-      - ami: ami-073bebf92f03bb216
-        name: us-west-1
-      - ami: ami-0a8bb5d3794424acc
-        name: us-west-2
-      version: 11.29.2
-  - name: coreos
-    versions:
-    - regions:
-      - ami: ami-0a3dec216288de4d0
-        name: ap-northeast-1
-      - ami: ami-02adc372e1ee4146f
-        name: ap-northeast-2
-      - ami: ami-0bbd4b2079d5402b4
-        name: ap-south-1
-      - ami: ami-01c32d64ac0ba511d
-        name: ap-southeast-1
-      - ami: ami-0419e4286d0d71faf
-        name: ap-southeast-2
-      - ami: ami-03a72248ea060789a
-        name: ca-central-1
-      - ami: ami-074403249c8493cae
-        name: cn-north-1
-      - ami: ami-0982d4762e829ff1b
-        name: cn-northwest-1
-      - ami: ami-031c08681db8c400e
-        name: eu-central-1
-      - ami: ami-0c3ab996558c44892
-        name: eu-north-1
-      - ami: ami-0143712d42aa4a7c9
-        name: eu-west-1
-      - ami: ami-04d721db24f40ffce
-        name: eu-west-2
-      - ami: ami-04740abcad65f30d8
-        name: eu-west-3
-      - ami: ami-03e977723db9b9ade
-        name: sa-east-1
-      - ami: ami-0a953cad0391f0305
-        name: us-east-1
-      - ami: ami-040ed4d275bf17303
-        name: us-east-2
-      - ami: ami-07b62f136d16aca9f
-        name: us-gov-east-1
-      - ami: ami-a62079c7
-        name: us-gov-west-1
-      - ami: ami-03a8c2f3cfe69169d
-        name: us-west-1
-      - ami: ami-0adf78a0f99af398f
-        name: us-west-2
-      version: 2303.3.0
-  - name: suse-jeos
-    versions:
-    - regions:
-      - ami: ami-00d7b027822cc1571
-        name: us-east-1
-      - ami: ami-0c5f506deebec53eb
-        name: us-east-2
-      - ami: ami-05edb19d02e1a73ab
-        name: us-west-2
-      - ami: ami-007ec31f9b07b0c8d
-        name: us-west-1
-      - ami: ami-0af9f266bfe2b5afd
-        name: eu-central-1
-      - ami: ami-0e01645e1296be3a6
-        name: eu-north-1
-      - ami: ami-0eb1bfc0195044b92
-        name: eu-west-1
-      - ami: ami-0678e49eacab40052
-        name: eu-west-2
-      - ami: ami-047f6d0d496401567
-        name: eu-west-3
-      - ami: ami-0fa985504fdd4e22e
-        name: ap-southeast-1
-      - ami: ami-07f5e9f8fb90aef7b
-        name: ap-northeast-1
-      - ami: ami-03705d9bab6727a1d
-        name: ap-northeast-2
-      - ami: ami-0ee1b42ae455ea3e7
-        name: ap-southeast-2
-      - ami: ami-09107b4e984d8a8fa
-        name: sa-east-1
-      - ami: ami-d11d2bb0
-        name: us-gov-west-1
-      - ami: ami-074d45945aefd8941
-        name: cn-north-1
-      - ami: ami-0879886d48d39ed25
-        name: cn-northwest-1
-      - ami: ami-0ae4cd0b7e525bdd2
-        name: ap-south-1
-      - ami: ami-09cfdc68c7d7f025d
-        name: ca-central-1
-      - ami: ami-0539c64e2d8acf172
-        name: us-gov-east-1
-      version: 15.1.20200406
-  - name: ubuntu
-    versions:
-    - regions:
-      - ami: ami-01f90b0460589991e
-        name: ap-northeast-1
-      - ami: ami-0cb1ddea3786f6c0d
-        name: sa-east-1
-      - ami: ami-07042e91d04b1c30d
-        name: eu-west-1
-      - ami: ami-0d11056c10bfdde69
-        name: ap-south-1
-      - ami: ami-0367b500fdcac0edc
-        name: us-east-2
-      - ami: ami-0edf3b95e26a682df
-        name: us-west-2
-      - ami: ami-046842448f9e74e7d
-        name: us-east-1
-      - ami: ami-064efdb82ae15e93f
-        name: ca-central-1
-      - ami: ami-07ce5f60a39f1790e
-        name: ap-southeast-1
-      - ami: ami-04c7af7de7ad468f0
-        name: ap-southeast-2
-      - ami: ami-0e850e0e9c20d9deb
-        name: eu-north-1
-      - ami: ami-0c367ebddcf279dc6
-        name: eu-west-3
-      - ami: ami-096e3ded41e3bda6a
-        name: ap-northeast-2
-      - ami: ami-0718a1ae90971ce4d
-        name: eu-central-1
-      - ami: ami-04cc79dd5df3bffca
-        name: eu-west-2
-      - ami: ami-0d58800f291760030
-        name: us-west-1
-      version: 18.4.20200228
+    - name: ubuntu
+      versions:
+        - regions:
+            - ami: ami-032cf5e284518543d
+              name: ap-northeast-1
+            - ami: ami-0fcd3565c065e9238
+              name: sa-east-1
+            - ami: ami-08b1cea5487c762b3
+              name: eu-west-1
+            - ami: ami-027d1dd332103051b
+              name: ap-south-1
+            - ami: ami-02fd7546f0f6effb6
+              name: us-east-2
+            - ami: ami-04aac3d7ea7609469
+              name: us-west-2
+            - ami: ami-095192256fe1477ad
+              name: us-east-1
+            - ami: ami-0b08c6831ffd5ea84
+              name: ca-central-1
+            - ami: ami-0c2e7524d47186df7
+              name: ap-southeast-1
+            - ami: ami-035c8e816223729a6
+              name: ap-southeast-2
+            - ami: ami-1b33bb65
+              name: eu-north-1
+            - ami: ami-074f4c146d4f5d466
+              name: eu-west-3
+            - ami: ami-06d2ca2471c251818
+              name: ap-northeast-2
+            - ami: ami-05b5a98cd34853d29
+              name: eu-central-1
+            - ami: ami-0ee246e709782b1be
+              name: eu-west-2
+            - ami: ami-03c9dad75296f9e90
+              name: us-west-1
+          version: 18.4.20190617
+    - name: ubuntu-tikv
+      versions:
+        - regions:
+            - ami: ami-032cf5e284518543d
+              name: ap-northeast-1
+            - ami: ami-0fcd3565c065e9238
+              name: sa-east-1
+            - ami: ami-08b1cea5487c762b3
+              name: eu-west-1
+            - ami: ami-027d1dd332103051b
+              name: ap-south-1
+            - ami: ami-02fd7546f0f6effb6
+              name: us-east-2
+            - ami: ami-04aac3d7ea7609469
+              name: us-west-2
+            - ami: ami-095192256fe1477ad
+              name: us-east-1
+            - ami: ami-0b08c6831ffd5ea84
+              name: ca-central-1
+            - ami: ami-0c2e7524d47186df7
+              name: ap-southeast-1
+            - ami: ami-035c8e816223729a6
+              name: ap-southeast-2
+            - ami: ami-1b33bb65
+              name: eu-north-1
+            - ami: ami-074f4c146d4f5d466
+              name: eu-west-3
+            - ami: ami-06d2ca2471c251818
+              name: ap-northeast-2
+            - ami: ami-05b5a98cd34853d29
+              name: eu-central-1
+            - ami: ami-0ee246e709782b1be
+              name: eu-west-2
+            - ami: ami-03c9dad75296f9e90
+              name: us-west-1
+          version: 18.4.201906178
 
 machineTypes:
   - cpu: "2"
@@ -204,46 +119,6 @@ machineTypes:
     gpu: "0"
     memory: 64Gi
     name: m5.4xlarge
-    usable: true
-  - cpu: "48"
-    gpu: "0"
-    memory: 192Gi
-    name: m5.12xlarge
-    usable: true
-  - cpu: "96"
-    gpu: "0"
-    memory: 384Gi
-    name: m5.24xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
-    memory: 8Gi
-    name: m4.large
-    usable: true
-  - cpu: "4"
-    gpu: "0"
-    memory: 16Gi
-    name: m4.xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 32Gi
-    name: m4.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 64Gi
-    name: m4.4xlarge
-    usable: true
-  - cpu: "40"
-    gpu: "0"
-    memory: 160Gi
-    name: m4.10xlarge
-    usable: true
-  - cpu: "64"
-    gpu: "0"
-    memory: 256Gi
-    name: m4.16xlarge
     usable: true
   - cpu: "2"
     gpu: "0"
@@ -267,163 +142,33 @@ machineTypes:
     usable: true
   - cpu: "2"
     gpu: "0"
-    memory: 5376Mi
-    name: c5n.large
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 21Gi
-    name: c5n.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 42Gi
-    name: c5n.4xlarge
-    usable: true
-  - cpu: "36"
-    gpu: "0"
-    memory: 96Gi
-    name: c5n.9xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "1"
-    memory: 61Gi
-    name: p3.2xlarge
-    usable: true
-  - cpu: "32"
-    gpu: "4"
-    memory: 244Gi
-    name: p3.8xlarge
-    usable: true
-  - cpu: "64"
-    gpu: "8"
-    memory: 488Gi
-    name: p3.16xlarge
-    usable: true
-  - cpu: "4"
-    gpu: "1"
-    memory: 61Gi
-    name: p2.xlarge
-    usable: true
-  - cpu: "32"
-    gpu: "8"
-    memory: 488Gi
-    name: p2.8xlarge
-    usable: true
-  - cpu: "64"
-    gpu: "16"
-    memory: 732Gi
-    name: p2.16xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
-    memory: 15616Mi
-    name: r4.large
-    usable: true
-  - cpu: "4"
-    gpu: "0"
-    memory: 31232Mi
-    name: r4.xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 61Gi
-    name: r4.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 122Gi
-    name: r4.4xlarge
-    usable: true
-  - cpu: "32"
-    gpu: "0"
-    memory: 244Gi
-    name: r4.8xlarge
-    usable: true
-  - cpu: "64"
-    gpu: "0"
-    memory: 488Gi
-    name: r4.16xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
-    memory: 16Gi
-    name: r5.large
-    usable: true
-  - cpu: "4"
-    gpu: "0"
-    memory: 32Gi
-    name: r5.xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 64Gi
-    name: r5.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 128Gi
-    name: r5.4xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
-    memory: 16Gi
-    name: r5a.large
-    usable: true
-  - cpu: "4"
-    gpu: "0"
-    memory: 32Gi
-    name: r5a.xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 64Gi
-    name: r5a.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 128Gi
-    name: r5a.4xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
-    memory: 16Gi
-    name: r5d.large
-    usable: true
-  - cpu: "4"
-    gpu: "0"
-    memory: 32Gi
-    name: r5d.xlarge
-    usable: true
-  - cpu: "8"
-    gpu: "0"
-    memory: 64Gi
-    name: r5d.2xlarge
-    usable: true
-  - cpu: "16"
-    gpu: "0"
-    memory: 128Gi
-    name: r5d.4xlarge
-    usable: true
-  - cpu: "64"
-    gpu: "0"
-    memory: 1952Gi
-    name: x1e.16xlarge
-    usable: true
-  - cpu: "128"
-    gpu: "0"
-    memory: 3904Gi
-    name: x1e.32xlarge
-    usable: true
-  - cpu: "2"
-    gpu: "0"
     memory: 2Gi
     name: t3.small
     usable: true
+  - name: i3.2xlarge
+    cpu: "8"
+    memory: 61Gi
+    gpu: "0"
+    usable: true
+  - name: i3.4xlarge
+    cpu: "16"
+    memory: 122Gi
+    gpu: "0"
+    usable: true
   - cpu: "2"
     gpu: "0"
-    memory: 4Gi
-    name: t3.medium
+    memory: 8Gi
+    name: m4.large
+    usable: true
+  - cpu: "4"
+    gpu: "0"
+    memory: 16Gi
+    name: m4.xlarge
+    usable: true
+  - cpu: "8"
+    gpu: "0"
+    memory: 32Gi
+    name: m4.2xlarge
     usable: true
 
 volumeTypes:
@@ -432,87 +177,82 @@ volumeTypes:
     usable: true
 
 regions:
-  - zones:
-    - name: ap-northeast-1a
-    - name: ap-northeast-1c
-    - name: ap-northeast-1d
-    name: ap-northeast-1
-  - zones:
-    - name: ap-northeast-2a
-    - name: ap-northeast-2c
-    name: ap-northeast-2
-  - zones:
-    - name: ap-south-1a
-    - name: ap-south-1b
-    name: ap-south-1
-  - zones:
-    - name: ap-southeast-1a
-    - name: ap-southeast-1b
-    - name: ap-southeast-1c
-    name: ap-southeast-1
-  - zones:
-    - name: ap-southeast-2a
-    - name: ap-southeast-2b
-    - name: ap-southeast-2c
-    name: ap-southeast-2
-  - zones:
-    - name: ca-central-1a
-    - name: ca-central-1b
-    name: ca-central-1
-  - zones:
-    - name: eu-central-1a
-    - name: eu-central-1b
-    - name: eu-central-1c
-    name: eu-central-1
-  - zones:
-    - name: eu-north-1a
-    - name: eu-north-1b
-    - name: eu-north-1c
-    name: eu-north-1
-  - zones:
-    - name: eu-west-1a
-    - name: eu-west-1b
-    - name: eu-west-1c
-    name: eu-west-1
-  - zones:
-    - name: eu-west-2a
-    - name: eu-west-2b
-    - name: eu-west-2c
-    name: eu-west-2
-  - zones:
-    - name: eu-west-3a
-    - name: eu-west-3b
-    - name: eu-west-3c
-    name: eu-west-3
-  - zones:
-    - name: sa-east-1a
-    - name: sa-east-1c
-    name: sa-east-1
-  - zones:
-    - name: us-east-1a
-    - name: us-east-1b
-    - name: us-east-1c
-    - name: us-east-1d
-    - name: us-east-1e
-    - name: us-east-1f
-    name: us-east-1
-  - zones:
-    - name: us-east-2a
-    - name: us-east-2b
-    - name: us-east-2c
-    name: us-east-2
-  - zones:
-    - name: us-west-1a
-    - name: us-west-1c
-    name: us-west-1
-  - zones:
-    - name: us-west-2a
-    - name: us-west-2b
-    - name: us-west-2c
-    - name: us-west-2d
-    name: us-west-2
-  - zones:
-    - name: us-gov-west-1a
-    - name: us-gov-west-1b
-    - name: us-gov-west-1c
-    name: us-gov-west-1
+  - name: ap-northeast-1
+    zones:
+      - name: ap-northeast-1a
+      - name: ap-northeast-1c
+      - name: ap-northeast-1d
+  - name: ap-northeast-2
+    zones:
+      - name: ap-northeast-2a
+      - name: ap-northeast-2c
+  - name: ap-south-1
+    zones:
+      - name: ap-south-1a
+      - name: ap-south-1b
+  - name: ap-southeast-1
+    zones:
+      - name: ap-southeast-1a
+      - name: ap-southeast-1b
+      - name: ap-southeast-1c
+  - name: ap-southeast-2
+    zones:
+      - name: ap-southeast-2a
+      - name: ap-southeast-2b
+      - name: ap-southeast-2c
+  - name: ca-central-1
+    zones:
+      - name: ca-central-1a
+      - name: ca-central-1b
+  - name: eu-central-1
+    zones:
+      - name: eu-central-1a
+      - name: eu-central-1b
+      - name: eu-central-1c
+  - name: eu-north-1
+    zones:
+      - name: eu-north-1a
+      - name: eu-north-1b
+      - name: eu-north-1c
+  - name: eu-west-1
+    zones:
+      - name: eu-west-1a
+      - name: eu-west-1b
+      - name: eu-west-1c
+  - name: eu-west-2
+    zones:
+      - name: eu-west-2a
+      - name: eu-west-2b
+      - name: eu-west-2c
+  - name: eu-west-3
+    zones:
+      - name: eu-west-3a
+      - name: eu-west-3b
+      - name: eu-west-3c
+  - name: sa-east-1
+    zones:
+      - name: sa-east-1a
+      - name: sa-east-1c
+  - name: us-east-1
+    zones:
+      - name: us-east-1a
+      - name: us-east-1b
+      - name: us-east-1c
+      - name: us-east-1d
+      - name: us-east-1e
+      - name: us-east-1f
+  - name: us-east-2
+    zones:
+      - name: us-east-2a
+      - name: us-east-2b
+      - name: us-east-2c
+  - name: us-west-1
+    zones:
+      - name: us-west-1a
+      - name: us-west-1c
+  - name: us-west-2
+    zones:
+      - name: us-west-2a
+      - name: us-west-2b
+      - name: us-west-2c
+      - name: us-west-2d

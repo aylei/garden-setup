@@ -104,6 +104,36 @@ extension_manifests:
         type: ubuntu
 
 ########################################
+  os-ubuntu-tikv:
+########################################
+    <<: (( &template ))
+    apiVersion: core.gardener.cloud/v1beta1
+    kind: ControllerRegistration
+    metadata:
+      name: os-ubuntu-tikv
+    spec:
+      deployment:
+        providerConfig:
+          chart: (( encoded_chart ))
+          values:
+            concurrentSyncs: 25
+            image:
+              repo: (( version.image_repo || ~~ ))
+              tag: (( version.image_tag || ~~ ))
+            resources:
+              limits:
+                cpu: 100m
+                memory: 256Mi
+              requests:
+                cpu: 20m
+                memory: 64Mi
+        type: helm
+      resources:
+        - kind: OperatingSystemConfig
+          type: ubuntu-tikv
+
+
+########################################
   os-gardenlinux:
 ########################################
     <<: (( &template ))

@@ -30,10 +30,11 @@ deployment:
   # all need a matching node in landscape.versions.gardener.extensions in the acre.yaml file
   # and a manifest template in extension_manifests in this component's deployment.yaml
   extensions:
-    - os-coreos
+    # - os-coreos
     - os-ubuntu
-    - os-suse-jeos
-    - os-gardenlinux
+    - os-ubuntu-tikv
+    # - os-suse-jeos
+    # - os-gardenlinux
     - dns-external
     - networking-calico
     - <<: (( sum[.infrastructures|[]|s,e|-> s [ "provider-" e ]] ))
