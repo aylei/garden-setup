@@ -20,7 +20,9 @@ utilities:
     values:
       <<: (( &template ))
       profileoverwrite: (( iaasconfig.profile || {} ))
-      name: (( iaasconfig.name ))
+      # hack to share cloudprofile between all seeds of a same provider
+      # name: (( iaasconfig.name ))
+      name: (( iaasconfig.type ))
       type: (( iaasconfig.type ))
       config: (( iaasconfig ))
       credentials: (( iaasconfig.credentials || ~~ ))
